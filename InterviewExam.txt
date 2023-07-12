@@ -1,0 +1,124 @@
+a)<!DOCTYPE html>
+<html>
+    <head>
+        <title>template org</title>
+        <style>
+            p{
+                
+                width: 25%;
+                padding: 20px;
+                text-align: justify;
+               
+                display: inline-block;
+                margin: 20px;
+                background-color: blueviolet;
+                color: black;
+                
+            }
+         .c1{
+                   border:1px solid black;
+                   color:black;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+      <td>  <h4>Column name of org</h4></td>
+      <td>   </td>
+      <td></td>
+      <td></td>
+
+      <td></td>
+       <td ><h4>Column name in db</h4></td>
+    </tr>
+    </table>
+        <table style="width:40%",align:"center" 
+        class="c1">
+        <tr>
+            <td>
+       <p> First Name</p>
+      <p>Field1</p><br>
+    </td>
+    </tr>
+    <tr></tr>
+    <td>
+       <p> Last Name</p>
+       <p>Field2</p><br>
+   </td>
+    </tr>
+    <tr>
+        <td>
+       <p> Date of Birth</p>
+       <p>Field3</p><br>
+    </td>
+</tr>
+<tr>
+    <td>
+       <p> City</p>
+       <p>Field4</p><br>
+    </td>
+       </tr>  
+    </table>
+    </body>
+</html>
+
+
+
+
+b)import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class Exam {
+
+	public static void main(String[] args) {
+		try
+		{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","priyanka");
+			Statement stmt=con.createStatement();
+			stmt.executeUpdate("create table student1(Firstname varchar2(40),Lastname varchar2(40),DOB varchar2(540))");
+			System.out.println("new table is created");
+			con.close();
+			
+			
+			
+			
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex);
+		}
+		
+
+	}
+
+}
+
+c)import java.sql.*;
+public class InsertTable {
+
+	public static void main(String[] args) {
+		try
+		{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","sathyadb","sathyadb");
+			Statement stmt=con.createStatement();
+			stmt.executeUpdate("Insert into student values(101,'priyana','priya@123','hyderabad')");
+			System.out.println("new table is created");
+			con.close();
+			
+			
+			
+			
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex);
+		}
+		
+
+	}
+
+}
